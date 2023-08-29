@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+ <web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
+                         https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd" version="6.0">
+ <display-name>Archetype Created Web Application</display-name>
+ <servlet>
+         <servlet-name>Log4jInitServlet</servlet-name>
+         <servlet-class>shared.InitLog4j</servlet-class>
+         <init-param>
+                 <param-name>logPath</param-name>
+		 <param-value>/WEB-INF/logs/error.log</param-value>
+         </init-param>
+         <load-on-startup>1</load-on-startup>
+ </servlet> 
+ <servlet>
+	 <servlet-name>ch5Controller</servlet-name>
+	 <servlet-class>ch5.Controller</servlet-class>
+	 <init-param>
+		 <param-name>create</param-name>
+		 <param-value>true</param-value>
+	 </init-param>
+ </servlet>
+ <servlet-mapping>
+         <servlet-name>ch5Controller</servlet-name>
+         <url-pattern>/ch5/Controller</url-pattern>
+ </servlet-mapping>
+
+ <servlet>
+	 <servlet-name>ch3Controller</servlet-name>
+	 <servlet-class>ch3.controMitBean.Controller</servlet-class>
+	 <init-param>
+		 <param-name>logLevel</param-name>
+		 <param-value>INFO</param-value>
+	 </init-param>
+ </servlet>
+</web-app>
